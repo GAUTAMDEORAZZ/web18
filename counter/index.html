@@ -14,13 +14,9 @@
 </html>
 
 <script>
-  var count = localStorage.getItem("counterValue") || 0;
+  var count = localStorage.getItem("counter") || 0;
 
-  //   if (localStorage.getItem("counterValue") == null) {
-  //     count = 0;
-  //   } else {
-  //     count = localStorage.getItem("counterValue");
-  //   }
+  //  
 
   document.querySelector("h1").innerText = count;
 
@@ -29,7 +25,7 @@
   function decFun() {
     count--;
     document.querySelector("h1").innerText = count;
-    localStorage.setItem("counterValue", count);
+    localStorage.setItem("counter", count);
   }
 
   document.querySelector("#inc").addEventListener("click", incFun);
@@ -37,44 +33,7 @@
   function incFun() {
     count++;
     document.querySelector("h1").innerText = count;
-    localStorage.setItem("counterValue", count);
+    localStorage.setItem("counter", count);
   }
 
-  //   or and operators || &&
-
-  // output will be true when both condns are true
-  //   console.log(true && true);
-  //   console.log(true && false);
-  //   console.log(false && true);
-  //   console.log(false && false);
-
-  //   console.log("----------------------------------------------------");
-
-  //   // output will be true even when one condn is true
-  //   console.log(true || true);
-  //   console.log(true || false);
-  //   console.log(false || true);
-  //   console.log(false || false);
-
-  //   console.log("----------------");
-  //   console.log(true || true);
-  //   console.log(true || null);
-  //   console.log(null || true);
-  //   console.log(null || null);
-
-  //   console.log(localStorage.getItem("agahahajbjababa") || true);
-  //   console.log(true || localStorage.getItem("agahahajbjababa"));
-  //     console.log(localStorage.getItem("agahahajbjababa")||0)
-  //   console.log("--------");
-
-  //   console.log(false || []);
-
-  //   //   null, "", undefined,NaN  - false
-
-  //   var x = NaN;
-  //   if (x) {
-  //     console.log("masai");
-  //   } else {
-  //     console.log("masai school");
-  //   }
 </script>
