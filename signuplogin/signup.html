@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+
+    <style>
+        h1{
+            text-align: center;
+            color: rebeccapurple;
+
+        }
+        #container{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+           width: 50%;
+           display: block;
+           display: inline-block;
+           
+           margin-left:30%;
+           padding-right: -25%;
+           text-align: center;
+
+        }
+        #container>h2{
+            font-size: 35px;
+
+        }
+        label ,input {
+            margin: 20px;
+            font-size: 30px;
+
+        }
+        input{
+            width: 55%;
+            border: 1px solid gray;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+
+        }
+        input:hover{
+            width: 55%;
+            border: 1px solid gray;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            cursor: pointer;
+
+        }
+       #container>#form> label{
+           display: inline;
+           text-align: right;
+    
+        }
+       
+    </style>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="navbar">
+        <div><a href="mens.html">Mens</a></div>
+        <div><a href="womens.html">Womens</a></div>
+        <div><a href="login.html">Login</a></div>
+        <div><a href="signup.html">Signup</a></div>
+      </div>
+    
+
+     <div id="container">
+     <h2>SignUp</h2>
+    <form id="form">
+        
+        <label style="text-align: left;" for="name">Full name</label><br>
+        <input type="text" id="name" placeholder="Enter your Name "><br>
+        <label for="email">Email</label><br>
+        <input type="email" name="email" id="email" placeholder="Enter your Email"><br>
+        <label for="password"> Password</label><br>
+        <input type="password" id="pass" placeholder="Enter your password"><br>
+
+        <p>By siging it you accept all term and condition Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, accusamus.</p>
+        <input type="submit" value="SignUp" placeholder="SignUp"><br>
+    </form>
+</div>
+</body>
+</html>
+
+<script>
+
+document.querySelector("#form").addEventListener("submit",myfun)
+
+
+    var arrData=JSON.parse(localStorage.getItem("formData")) ||[]
+    
+function myfun(){
+    event.preventDefault();
+
+    var objData={
+
+        Name:form.name.value,
+        Email:form.email.value,
+        Password:form.pass.value,
+    };
+
+    arrData.push(objData)
+    localStorage.setItem("formData",JSON.stringify(arrData))
+    console.log(arrData)
+
+}
+
+</script>
