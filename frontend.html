@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+
+    }
+    #container>div>img:nth-child(2){
+        /* width: 20%; */
+        /* display: block;
+        margin: auto;
+        height: 60px; */
+        margin-top: -12px;
+    }
+    p,h3{
+        text-align: center;
+    }
+
+    h1{
+        text-align: center;
+        font-size: 53px;
+        
+    }
+</style>
+<body>
+    <h1>frontend</h1>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+
+
+    var investorObj=JSON.parse(localStorage.getItem("investorData"))
+
+ investorObj.forEach(function(elem){
+        var box=document.createElement("div")
+        var avatar=document.createElement("img")
+        avatar.setAttribute("src",elem.investorImg)
+        var Name=document.createElement("h3")
+        Name.innerText=elem.investorName
+        var Role=document.createElement("p")
+        Role.innerText=elem.investorRole;
+
+        var logo=document.createElement("img")
+        logo.setAttribute("src",elem.investorLogo)
+
+        box.append(avatar,Name,Role,logo)
+        var report=document.querySelector("#container")
+        report.append(box)
+
+
+
+        
+    })
+
+</script>
